@@ -1,6 +1,24 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+
+  .logo-nav {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    
+    span {
+      color: darken($principal, 15%);
+      transition: .3s;
+    }
+  }
+
+  &:hover{
+    span{
+      color: darken($principal, 0);
+    }
+  }
+
 }
 
 .navbar-lewagon .navbar-collapse {
