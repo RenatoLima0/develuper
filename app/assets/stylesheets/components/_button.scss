@@ -13,3 +13,19 @@
     text-decoration: none;
   }
 }
+
+.btn-secundario {
+  background-color: $secundario;
+  border: 2px solid $secundario;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 25px;
+  transition: .3s;
+
+  &:hover {
+    color: $secundario;
+    background-color: #fff;
+    text-decoration: none;
+  }
+}
