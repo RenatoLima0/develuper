@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    project_owner = ProjectOwner.find(current_user.id)
+    project_owner = ProjectOwner.create(user_id: current_user.id)
     @project.project_owner = project_owner
     if @project.save
       redirect_to @project, notice: 'Create Sucessfully'
