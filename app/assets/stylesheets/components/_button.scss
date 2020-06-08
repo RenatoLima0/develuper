@@ -1,0 +1,15 @@
+.btn-principal {
+  background-color: $principal;
+  border: 2px solid $principal;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 25px;
+  transition: .3s;
+
+  &:hover{
+    color: $principal;
+    background-color: #fff;
+    text-decoration: none;
+  }
+}
