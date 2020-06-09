@@ -2,5 +2,3 @@
 <%= @project.description %>
 <%= @project.address %>
     <%=link_to "edit project", edit_project_path(@project), class: 'btn btn-primary w-100' %>
-<% if @project.project_owner == current_user.id %>
-<% end %>
