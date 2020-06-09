@@ -1,7 +1,13 @@
 <div class="container">
   <div class="row pt-3">
     <% @projects.each do |project| %>
-      <div class="col-4 py-2">
+            <div class="col-4 py-2">
+        <div class="card-projetos " <div class="card-description">
+          <div class="d-flex justify-content-center">
+            <div class="card-body">
+              <p><%= project.title %></p>
+              <p><%= project.address %></p>
+              <p><%= project.description %></p>
       <div class="card-projetos ">
           <div class="card-description">
             <div class="d-flex justify-content-center">
@@ -12,11 +18,12 @@
               </div>
             </div>
           </div>
-          <div class="card-footer">
-            <h2><%= link_to project.title, project %></h2>          
-          </div>
+        </div>
+        <div class="card-footer">
+          <h2><%= link_to project.title, project %></h2>
         </div>
       </div>
+    <% end %>
       <% end %>
   </div>
 </div>
