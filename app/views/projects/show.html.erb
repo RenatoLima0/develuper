@@ -1,6 +1,19 @@
+<<<<<<< HEAD
 <%= @project.title %>
 <%= @project.description %>
 <%= @project.address %>
     <%=link_to "edit project", edit_project_path(@project), class: 'btn btn-primary w-100' %>
-<% if @project.project_owner == current_user.id %>
-<% end %>
+=======
+<div class = 'container'>
+  <div class='row py-5 justify-content-center'>
+  <div class='col-7'>
+  <%= @project.title %>
+    <%= @project.description %>
+    <%= @project.address %>
+        <%=link_to "edit project", edit_project_path(@project), class: 'btn-principal' %>
+    <% @project.project_owner == current_user.id %>
+    <%=link_to "delete project",@product, method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn-secundario' %>
+    </div>
+  </div>
+</div>
+>>>>>>> 4304d294be4bf2ea35476b6242ee21e5a3798e1b
