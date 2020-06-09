@@ -1,25 +1,20 @@
 <div class="container">
   <div class="row pt-3">
     <% @projects.each do |project| %>
-      <% if project.photo.attached? %>
       <div class="col-4 py-2">
-      <div class="card-projetos "
-          style="background-image: linear-gradient(260deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 30%), url('<%= cl_image_path project.photo.key, height: 600, width: 600, crop: :fill %>')">
-          <div class="card-description">
-            <div class="d-flex justify-content-center">
-              <div class="card-body">
-                <p><%= project.title %></p>
-                <p><%= project.address %></p>
-                <p><%= project.description %></p>
-              </div>
+        <div class="card-projetos " <div class="card-description">
+          <div class="d-flex justify-content-center">
+            <div class="card-body">
+              <p><%= project.title %></p>
+              <p><%= project.address %></p>
+              <p><%= project.description %></p>
             </div>
           </div>
-          <div class="card-footer">
-            <h2><%= link_to project.title, project %></h2>          
-          </div>
+        </div>
+        <div class="card-footer">
+          <h2><%= link_to project.title, project %></h2>
         </div>
       </div>
-      <% end %>
     <% end %>
   </div>
 </div>
