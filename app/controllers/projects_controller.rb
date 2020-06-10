@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
     
 >>>>>>> 176b3a0c357e436a118870f4e0d41b4cd3dd8840
     @markers = @projects.map do |project|
-      # raise
+     
       {
         lat: project.latitude,
         lng: project.longitude
