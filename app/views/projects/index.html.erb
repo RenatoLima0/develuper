@@ -1,27 +1,29 @@
-<div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-<div class="container">
-<div class="row pt-3">
-    <% @projects.each do |project| %>
-    <div class="col-4 py-2">
-
-      <div class="card-projetos ">
-        <div class="card-description">
-          <div class="d-flex justify-content-center">
-            <div class="card-body">
-              <p><%= project.title %></p>
-              <p><%= project.address %></p>
-              <p><%= project.description %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-5 p-0">
+      <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+    <div class="col-7 p-0">
+      <h1 class="text-center pt-3">Projects <%= current_user.role %></h1>
+      <div class="row m-0">
+        <% @projects.each do |project| %>
+          <div class="col-12">
+            <div class="card-projetos">
+              <div class="card-body">
+                <p><%= project.title %></p>
+                <p><%= project.address %></p>
+                <p><%= project.description %></p>
+              </div>
+              <div class="card-footer">
+                <h2><%= link_to project.title, project %></h2>
+              </div>
             </div>
           </div>
-        </div>
-        </>
-        <div class="card-footer">
-          <h2><%= link_to project.title, project %></h2>
-        </div>
+        <% end %>
       </div>
-      <% end %>
-
     </div>
   </div>
+</div>
+
+<%= link_to 'New project', new_project_url, class: 'btn-principal btn-projeto' %>
