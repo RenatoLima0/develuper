@@ -9,7 +9,7 @@ class Project < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
 
-  # def project_owner_address
-  #  project_owner.user.address 
-  # end
+  def project_owner_address
+    project_owner.user.address 
+  end
 end

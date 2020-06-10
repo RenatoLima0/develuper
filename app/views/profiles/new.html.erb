@@ -7,7 +7,7 @@
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :phone %>
-  <%= f.input :role %>
+  <%= f.input :role, collection: ["Developer", "Project Owner"] %>
   <%= f.submit 'Complete Your Registration', class: 'btn btn-primary btn-block' %>
 
 <% end %>
