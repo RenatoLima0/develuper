@@ -4,9 +4,10 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.where.not(project_owner: current_user.project_owner)
-    @projects = @projects  .geocoded # returns projects with coordinates
-
+    @projects = @projects.geocoded # returns projects with coordinates
+    
     @markers = @projects.map do |project|
+      # raise
       {
         lat: project.latitude,
         lng: project.longitude
