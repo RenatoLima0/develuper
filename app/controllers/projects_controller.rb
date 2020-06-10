@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
     @projects = @projects.geocoded # returns projects with coordinates
 
     @markers = @projects.map do |project|
-      # raise
+     
       {
         lat: project.latitude,
         lng: project.longitude
