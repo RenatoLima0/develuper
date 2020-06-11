@@ -1,6 +1,9 @@
 class ChatroomsController < ApplicationController
 
-
+  def index 
+   @chatrooms = Chatroom.all
+  end
+  
   def show
     @message = Message.new
     @chatroom = Chatroom.find(params[:id])
@@ -15,4 +18,22 @@ class ChatroomsController < ApplicationController
     end
     redirect_to @chatroom
   end
+
+  def new
+    @chatroom = Chatroom.new
+  end
+
+    def create
+      @chatroom = Chatroom.new(project_params)
+      project_owner = ProjectOwner.create(user_id: current_user.id)
+  
+      @chatroom.project_owner = project_owner
+      if @project.save
+        redirect_to @chatroom, notice: 'Create Sucessfully'
+      else
+        render 'new'
+      end
+    end
+
+  
 end
