@@ -16,5 +16,5 @@
   </div>
   </div>
   </div>
-  <%=link_to "MENSAGEM ", chatroom_path(@project.project_owner), class: 'btn btn-success' %>
+  <%=link_to "MENSAGEM ", find_chatroom_and_redirect_path(project_id: @project), class: 'btn btn-success' %>
 
