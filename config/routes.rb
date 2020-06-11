@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-
+  get '/chatrooms/find_and_redirect', as: :find_chatroom_and_redirect
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end

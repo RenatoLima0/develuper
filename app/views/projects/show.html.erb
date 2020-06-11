@@ -8,12 +8,13 @@
   <div class='row py-5 justify-content-center'>
   <div class='col-7'>
   <%= @project.title %>
-    <%= @project.description %>
-    <%= @project.address %>
-        <%=link_to "edit project", edit_project_path(@project), class: 'btn-principal' %>
-    <% @project.project_owner == current_user.id %>
-    <%=link_to "delete project",@product, method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn-secundario' %>
-    </div>
+  <%= @project.description %>
+  <%= @project.address %>
+  <%=link_to "edit project", edit_project_path(@project), class: 'btn-principal' %>
+  <% @project.project_owner == current_user.id %>
+  <%=link_to "delete project",@product, method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn-secundario' %>
   </div>
-</div>
+  </div>
+  </div>
+  <%=link_to "MENSAGEM ", find_chatroom_and_redirect_path(project_id: @project), class: 'btn btn-success' %>
 
