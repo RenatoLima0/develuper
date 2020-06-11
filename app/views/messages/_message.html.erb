@@ -1,7 +1,27 @@
-<div class="message-container" id="message-<%= message.id %>">
-    <i class="author">
-        <span><%= message.user.nickname %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-    </i>
-    <p><%= message.content %></p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <% if message.user.role == "Developer" %>
+                <div class="message-container developer-message " id="message-<%= message.id %>">
+                    <div class="content">
+                        <i class="author">
+                            <span><%= message.user.nickname %></span>
+                            <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                        </i>
+                        <p><%= message.content %></p>
+                    </div>
+                </div>
+            <% else %>
+                <div class="message-container owner-message" id="message-<%= message.id %>">
+                    <div class="content">
+                        <i class="author">
+                            <span><%= message.user.nickname %></span>
+                            <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                        </i>
+                        <p><%= message.content %></p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
 </div>

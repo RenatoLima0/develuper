@@ -1,0 +1,29 @@
+$padding-message: 10px 30px;
+
+.developer-message {
+  padding: $padding-message;
+  text-align: right;
+
+  .content{
+    background-color: $principal;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    color: #fff;
+    padding: 15px 30px;
+  }
+}
+
+.owner-message {
+  padding: $padding-message;
+  text-align: left;
+
+  .content {
+    background-color: $secundario;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: #fff;
+    padding: 15px 30px;
+  }
+}
