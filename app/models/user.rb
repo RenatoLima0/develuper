@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_one :project_owner
   has_one :developer
-  after_create :create_role
+ 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   geocoded_by :address
@@ -16,10 +16,6 @@ class User < ApplicationRecord
   
     
   
-  def create_role
-      if self.role == "Developer"
-        Developer.create(user: self)
-      end
-  end
+  
 
 end
