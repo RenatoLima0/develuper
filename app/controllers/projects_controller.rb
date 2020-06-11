@@ -7,10 +7,11 @@ class ProjectsController < ApplicationController
     @projects = @projects.geocoded # returns projects with coordinates
 
     @markers = @projects.map do |project|
-     
       {
         lat: project.latitude,
-        lng: project.longitude
+        lng: project.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { project: project }),
+        image_url: helpers.asset_url('building.png')
       }
     end
   end
