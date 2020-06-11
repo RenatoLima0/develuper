@@ -1,14 +1,18 @@
-<h1>#<%= @chatroom.name %></h1>
-<h2>#<%= @current_user.nickname %></h2>
+<div class="container">
+  <div class="row py-3">
+    <div class="col-12">
+      <h1>#<%= @chatroom.project.title %></h1>
+      <h2>#<%= @current_user.nickname %></h2>
 
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-<% end %>
+      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Type a message" %>
+      <% end %>
 
-
-
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-    <% @chatroom.messages.each do |message| %>
-      <%= render 'messages/message', message: message %>  
-    <% end %>
+      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <% @chatroom.messages.each do |message| %>
+          <%= render 'messages/message', message: message %>  
+        <% end %>
+      </div>    
+    </div>
+  </div>
 </div>
