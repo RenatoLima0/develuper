@@ -5,6 +5,7 @@
 <%= simple_form_for @profile, url: profiles_path, method: :post do |f| %>
 
   <%= f.input :name %>
+  <%= f.input :nickname %>
   <%= f.input :address %>
   <%= f.input :phone %>
   <%= f.input :role, collection: ["Developer", "Project Owner"] %>
