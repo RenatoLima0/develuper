@@ -4,15 +4,15 @@
             </div>
         </div>
         <div class="col-7 p-0">
-            <h1 class="text-center pt-3">Chats <%= @chatroom %></h1>
+            <h1 class="text-center pt-3">Chats</h1>
             <div class="row px-2">
-                <% @.each do |chatroom| %>
+                <% @chatrooms.each do |chatroom| %>
                     <div class="col-4 py-2">
                         <div class="card-projetos ">
                             <div class="card-description">
                                 <div class="d-flex justify-content-center">
                                     <div class="card-body">
-                                        <p><%= current_user.messages %></p>
+                                        <p><%= chatroom.project.title %></p>
                                     </div>
                                 </div>
                             </div>
