@@ -11,7 +11,9 @@ class DevelopersController < ApplicationController
       
       {
         lat: developer.latitude,
-        lng: developer.longitude
+        lng: developer.longitude,
+        infoWindow: render_to_string,
+        image_url: helpers.asset_url('building.png')
       }
     end
     

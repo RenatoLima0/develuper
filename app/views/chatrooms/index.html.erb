@@ -12,7 +12,9 @@
                             <div class="card-description">
                                 <div class="d-flex justify-content-center">
                                     <div class="card-body">
+                                        
                                         <p><%= chatroom.project.title %></p>
+                                        <%= link_to "MSG", chatroom_path(chatroom.id),  class: "btn-principal"   %>
                                     </div>
                                 </div>
                             </div>
