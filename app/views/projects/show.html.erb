@@ -12,11 +12,11 @@
   <%= @project.description %>
   <%= @project.address %>
   
-  <% unless current_user.developer %>
+  
     <%=link_to "edit project", edit_project_path(@project), class: 'btn-principal' %>
     <% @project.project_owner == current_user.id %>
     <%=link_to "delete project",@product, method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn-secundario' %>
-  <% end %>
+
   </div>
   </div>
   </div>

@@ -11,6 +11,8 @@ class ProfilesController < ApplicationController
     if @profile.update(user_params)
       if @profile.role == "Developer"
         Developer.create(user: @profile)
+      else
+        ProjectOwner.create(user: @profile)
       end
       redirect_to @profile.role == "Developer" ?  projects_path : developers_path
       
