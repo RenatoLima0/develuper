@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show,]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -26,7 +26,12 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    project_owner = ProjectOwner.create(user_id: current_user.id)
+    if current_user.role == "Project Owner"
+      project_owner = ProjectOwner.find_by(user: current_user)
+    else
+      project_owner = ProjectOwner.find_by(user: current_user)
+      project_owner = ProjectOwner.create(user: current_user) if project_owner.nil?
+    end  
 
     @project.project_owner = project_owner
     if @project.save
