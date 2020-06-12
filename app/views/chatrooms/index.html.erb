@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-5 p-0">
+            </div>
+        </div>
+        <div class="col-7 p-0">
+            <h1 class="text-center pt-3">Chats</h1>
+            <div class="row px-2">
+                <% @chatrooms.each do |chatroom| %>
+                    <div class="col-4 py-2">
+                        <div class="card-projetos ">
+                            <div class="card-description">
+                                <div class="d-flex justify-content-center">
+                                    <div class="card-body">
+                                        
+                                        <p><%= chatroom.project.title %></p>
+                                        <%= link_to "MSG", chatroom_path(chatroom.id),  class: "btn-principal"   %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
