@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Develuper</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<head>
+  <title>Develuper</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+</head>
 
-   
-      <%= yield %>
-    
+<body>
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/flashes' %>
 
+  <%= yield %>
 
-   
-    <footer class="container-fluid p-5">
-      <div class="row justify-content-center">
-        <ul class="navbar nav-footer">
-          <li>About</li>
-          <li class="logo">Devel<span>Uper</span></li>
-          <li>Contact</li>
-        </ul>
-      </div>
-      <hr>
-      <div class="row justify-content-center">
-        <ul class="social-network">
-          <li><i class="fab fa-github"></i></li>
-          <li><i class="fab fa-github"></i></li>
-          <li><i class="fab fa-github"></i></li>
-        </ul>
-      </div>
-    </footer>
-  </body>
+  <footer class="container-fluid p-5">
+    <div class="row justify-content-center">
+      <ul class="navbar nav-footer">
+        <li>About</li>
+        <li class="logo">Devel<span>Uper</span></li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+      <ul class="social-network">
+        <li><i class="fab fa-github"></i></li>
+        <li><i class="fab fa-github"></i></li>
+        <li><i class="fab fa-github"></i></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
 </html>

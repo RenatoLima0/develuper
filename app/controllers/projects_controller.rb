@@ -11,13 +11,13 @@ class ProjectsController < ApplicationController
         lat: project.latitude,
         lng: project.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { project: project }),
-        image_url: helpers.asset_url('building.png')
+        image_url: helpers.asset_url('idea.png')
       }
     end
   end
 
   def show 
-    @project = Project.find(params[:id])
+    @project = Project.find(params[:id]) 
   end 
 
   def new
