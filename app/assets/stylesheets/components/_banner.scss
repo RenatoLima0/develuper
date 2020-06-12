@@ -1,4 +1,8 @@
 .banner{
+  align-items: center;
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%), url('banner.jpg');
+  background-size: cover;
+  display: flex;
   height: calc(100vh - 66px);
-  background-color: rgba(0, 0, 0, 0.65);
+  justify-content: center;
 }
