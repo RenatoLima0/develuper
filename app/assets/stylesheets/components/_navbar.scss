@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 
   .logo-nav {
     font-size: 2rem;
