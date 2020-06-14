@@ -1,9 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-5 p-0">
-            </div>
-        </div>
-        <div class="col-7 p-0">
+        <div class="col-12 p-0">
             <h1 class="text-center pt-3">Chats</h1>
             <div class="row px-2">
                 <% @chatrooms.each do |chatroom| %>
@@ -14,8 +11,7 @@
                                     <div class="card-body">
                                         
                                         <p><%= chatroom.project.title %></p>
-                                        <%= link_to "MSG", chatroom_path(chatroom.id),  class: "btn-principal"   %>
-
+                                        <%= link_to "Open Chat", chatroom_path(chatroom.id),  class: "btn-principal w-100"   %>
                                     </div>
                                 </div>
                             </div>
