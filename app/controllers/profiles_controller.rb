@@ -1,4 +1,3 @@
-
 class ProfilesController < ApplicationController
   def new
     @profile = User.new
@@ -7,15 +6,13 @@ class ProfilesController < ApplicationController
   def create
     @profile = current_user
     
-    
     if @profile.update(user_params)
       if @profile.role == "Developer"
         Developer.create(user: @profile)
       else
         ProjectOwner.create(user: @profile)
       end
-      redirect_to @profile.role == "Developer" ?  projects_path : developers_path
-      
+      redirect_to @profile.role == "Developer" ? projects_path : developers_path
     else
       render :new
     end
@@ -24,6 +21,6 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :address, :phone, :role, :nickname)
+    params.require(:user).permit(:name, :address, :phone, :role, :nickname, :photo)
   end
 end

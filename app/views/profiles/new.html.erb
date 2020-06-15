@@ -1,14 +1,16 @@
-
-
-<h4 class="my-4">Just some more information...</h4>
-
-<%= simple_form_for @profile, url: profiles_path, method: :post do |f| %>
-
-  <%= f.input :name %>
-  <%= f.input :nickname %>
-  <%= f.input :address %>
-  <%= f.input :phone %>
-  <%= f.input :role, collection: ["Developer", "Project Owner"] %>
-  <%= f.submit 'Complete Your Registration', class: 'btn btn-primary btn-block' %>
-
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 py-5 div-form">
+      <h4 class="my-4">Just some more information...</h4>
+      <%= simple_form_for @profile, url: profiles_path, method: :post do |f| %>
+        <%= f.input :name %>
+        <%= f.input :nickname %>
+        <%= f.input :address %>
+        <%= f.input :phone %>
+        <%= f.input :role, collection: ["Developer", "Project Owner"] %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit 'Complete Your Registration', class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </div>
+  </div>
+</div>
