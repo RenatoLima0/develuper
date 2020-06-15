@@ -1,9 +1,10 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show,]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = Project.where.not(project_owner: current_user.project_owner)
+    # @projects = Project.where.not(project_owner: current_user.project_owner)
+    @projects = Project.all
     @projects = @projects.geocoded # returns projects with coordinates
 
     @markers = @projects.map do |project|
@@ -11,13 +12,13 @@ class ProjectsController < ApplicationController
         lat: project.latitude,
         lng: project.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { project: project }),
-        image_url: helpers.asset_url('building.png')
+        image_url: helpers.asset_url('idea.png')
       }
     end
   end
 
   def show 
-    @project = Project.find(params[:id])
+    @project = Project.find(params[:id]) 
   end 
 
   def new
@@ -26,7 +27,12 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    project_owner = ProjectOwner.create(user_id: current_user.id)
+    if current_user.role == "Project Owner"
+      project_owner = ProjectOwner.find_by(user: current_user)
+    else
+      project_owner = ProjectOwner.find_by(user: current_user)
+      project_owner = ProjectOwner.create(user: current_user) if project_owner.nil?
+    end  
 
     @project.project_owner = project_owner
     if @project.save

@@ -23,6 +23,8 @@ import {initChatroomCable} from '../channels/chatroom_channel';
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import { initMapbox } from '../plugins/init_mapbox';
+import { loadDynamicBannerText } from '../components/banner';
+import { initAnimacaoScroll } from '../components/scroll';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
@@ -37,4 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initChatroomCable();
+  loadDynamicBannerText();
+  initAnimacaoScroll();
 });

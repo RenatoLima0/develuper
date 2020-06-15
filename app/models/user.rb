@@ -12,9 +12,11 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
   
   
-  validates :name, :address, :phone, presence: true, on: :update
+  validates :name, :address, :phone, :role, :nickname, presence: true, on: :update
   
-    
+  
+
+  
   
   
 
