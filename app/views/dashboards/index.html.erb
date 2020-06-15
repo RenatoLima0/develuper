@@ -1,2 +1,34 @@
-<h1>Current user <%= current_user.role %></h1>
-
+<div class="container-fluid py-4">
+  <div class="row py-5 justify-content-center">
+    <div class="col-12 text-center">
+      <h1>Current user <%= current_user.role %></h1>
+    </div>
+    <div class="col-3">
+      <div class="card card-user">
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, crop: :thumb %>
+        <% else %>
+          <%= image_tag "perfil.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+        <div class="card-body text-center">
+          <ul class="list-group pb-3">
+            <li class="list-group-item">
+              <%= current_user.name %>
+            </li>
+            <li class="list-group-item">
+              <%= current_user.nickname %>
+            </li>
+            <li class="list-group-item">
+              <%= current_user.address %>
+            </li>
+            <li class="list-group-item">
+              <%= current_user.role %>
+            </li>
+          </ul>
+          <%= link_to 'Edit', "/users/edit", class: 'btn-principal my-4 px-5' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-9"></div>
+  </div>
+</div>
