@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2020_06_15_133938) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "role"
-    t.integer "phone"
+    t.string "phone"
     t.string "name"
     t.string "address"
     t.float "latitude"
