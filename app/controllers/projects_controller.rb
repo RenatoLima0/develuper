@@ -15,6 +15,18 @@ class ProjectsController < ApplicationController
         image_url: helpers.asset_url('idea.png')
       }
     end
+#if para implementação do search
+    if params[:query].present?
+      sql_query = " \
+        projects.title @@ :query \
+        OR projects.description @@ :query \
+        OR projects.address @@ :query \
+        "
+      @projects = Project.joins(:project_owner).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @projects = Project.all
+    end
+
   end
 
   def show 
