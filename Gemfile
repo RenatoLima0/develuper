@@ -6,6 +6,8 @@ ruby '2.6.6'
 gem 'pg_search', '~> 2.3.0'
 #API geocoder
 gem 'geocoder'
+gem 'cloudinary', '~> 1.12.0'
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 # Use postgresql as the database for Active Record
