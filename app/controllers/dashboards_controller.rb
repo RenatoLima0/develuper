@@ -1,9 +1,9 @@
 class DashboardsController < ApplicationController
   def index
     # @projects = Project.where.not(project_owner: current_user.project_owner)
-    @projects = Project.all
+    @projects = Project.where(project_owner: current_user.project_owner)
     @projects = @projects.geocoded # returns projects with coordinates
-    @developers = User.where.not(id: current_user.id, role: "Project Owner")
+    @developers = User.where(id: current_user.id)
     @developers = @developers.geocoded # returns developers with coordinates
     @markers = @projects.map do |project|
       {
