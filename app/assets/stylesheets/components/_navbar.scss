@@ -1,7 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #fff;
-  position: fixed;
   width: 100%;
   z-index: 10;
 
@@ -9,6 +8,7 @@
     font-size: 2rem;
     font-weight: 600;
     margin: 0;
+    width: 100px;
     
     span {
       color: darken($principal, 15%);
@@ -29,5 +29,5 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 125px;
 }

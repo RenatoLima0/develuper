@@ -3,8 +3,8 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @projects = Project.where.not(project_owner: current_user.project_owner)
-    @projects = Project.all
+    @projects = Project.where.not(project_owner: current_user.project_owner)
+    # @projects = Project.all
     @projects = @projects.geocoded # returns projects with coordinates
 
     @markers = @projects.map do |project|
