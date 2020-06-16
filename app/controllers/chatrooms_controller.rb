@@ -12,17 +12,18 @@ class ChatroomsController < ApplicationController
   def find_and_redirect
     if current_user.role == "Developer"
       @developer = current_user.developer
-      @project = Project.find(params[:project_id])
+      # raise
+      @project = current_user.project_owner.projects.first
       @chatroom = Chatroom.find_by(developer: @developer, project: @project)
     else
       @project_owner = current_user.project_owner
       @developer = Developer.find(params[:developer_id])
-      @project = current_user.project_owner.projects.find(1)
+      @project = current_user.project_owner.projects.first
       @chatroom = Chatroom.find_by(developer: @developer, project: @project)
     end
     
     if @chatroom.nil?
-      raise
+      # raise
       @chatroom = Chatroom.create(developer: @developer, project: @project)
     end
 
