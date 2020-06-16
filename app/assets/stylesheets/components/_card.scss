@@ -2,15 +2,31 @@
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  transition: .3s;
+
+  &:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  }
 
   .card-footer {
     background-color: $principal;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    transition: .3s;
+    
+    &:hover{
+      background-color: $secundario;
+    }
   }
 
   h2 {
     margin-bottom: 0;
+    font-size: 1.5rem;
+
+    a{
+      text-decoration: none;
+    }
   }
 
   a{
