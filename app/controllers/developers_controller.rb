@@ -1,6 +1,6 @@
 class DevelopersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_developer, only: [:show, :edit, :update, :destroy]
+  # before_action :set_developer, only: [:show, :edit, :update, :destroy]
 
   def index
     @developers = User.where.not(id: current_user.id, role: "Project Owner")
@@ -16,6 +16,8 @@ class DevelopersController < ApplicationController
   end
 
   def show 
+    # raise
+    @developer = Developer.find(params[:id])
   end 
 
   # def new
@@ -56,9 +58,9 @@ class DevelopersController < ApplicationController
     params.require(:devoloper).permit(:address, :title, :description)
   end
 
-  def set_devoloper
-    @devoloper = Devoloper.find(params[:id])
-  end
+  # def set_devoloper
+  #   @devoloper = Devoloper.find(params[:id])
+  # end
 
 end
 
