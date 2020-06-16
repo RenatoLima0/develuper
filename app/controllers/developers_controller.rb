@@ -1,11 +1,12 @@
 class DevelopersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  # before_action :set_developer, only: [:show, :edit, :update, :destroy]
+  # before_action :set_devoloper, only: [:show, :edit, :update, :destroy]
 
   def index
-    @developers = User.where.not(id: current_user.id, role: "Project Owner")
-    @developers = @developers.geocoded # returns developers with coordinates
-    @markers = @developers.map do |developer|
+    @developers = Developer.where.not(user: current_user)
+    users = User.where.not(id: current_user.id, role: "Project Owner")
+    users = users.geocoded # returns developers with coordinates
+    @markers = users.map do |developer|
       {
         lat: developer.latitude,
         lng: developer.longitude,
@@ -54,9 +55,9 @@ class DevelopersController < ApplicationController
 
   private
 
-  def devoloper_params
-    params.require(:devoloper).permit(:address, :title, :description)
-  end
+  # def devoloper_params
+  #   params.require(:devoloper).permit(:address, :title, :description)
+  # end
 
   # def set_devoloper
   #   @devoloper = Devoloper.find(params[:id])

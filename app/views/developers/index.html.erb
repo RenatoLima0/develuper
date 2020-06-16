@@ -13,15 +13,14 @@
 							<div class="card-description">
 								<div class="d-flex justify-content-center">
 									<div class="card-body">
-										<p><%= developer.name %></p>
-										<p><%= developer.role %></p>
-										<p><%= developer.address %></p>
+										<p><%= developer.user.name %></p>
+										<p><%= developer.user.role %></p>
+										<p><%= developer.user.address %></p>
 									</div>
 								</div>
 							</div>
 							<div class="card-footer">
-								
-								<h2><%= link_to developer.name, developer_path(developer) %></h2>
+								<h2><%= link_to developer.user.name, developer_path(developer) %></h2>
 							</div>
 						</div>
 					</div>
