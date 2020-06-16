@@ -15,8 +15,8 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11'
-      // style: 'mapbox://styles/renatoslima/ckbgzzqin01g71ik0bjd3d5gs/draft'
+      // style: 'mapbox://styles/mapbox/streets-v11'
+      style: 'mapbox://styles/renatoslima/ckbgzzqin01g71ik0bjd3d5gs'
     });
 
     map.addControl(new MapboxGeocoder({
@@ -35,7 +35,6 @@ const initMapbox = () => {
       element.style.backgroundSize = 'contain';
       element.style.width = '35px';
       element.style.height = '35px';
-
 
       new mapboxgl.Marker(element)
         .setLngLat([marker.lng, marker.lat])
