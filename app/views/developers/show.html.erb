@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+    
+    </div>
+    <div class="col-6">
+      <%= @developer.user.name %>
+      <%= @developer.user.address %>
+      <%= @developer.user.email %>
+      <%= @developer.user.phone %>
+      <%=link_to "MENSAGEM ", find_chatroom_and_redirect_path(developer_id: @developer), class: 'btn btn-success' %>
+    </div>
+  </div>
+</div>
