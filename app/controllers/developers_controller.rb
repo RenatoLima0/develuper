@@ -4,11 +4,8 @@ class DevelopersController < ApplicationController
 
   def index
     @developers = User.where.not(id: current_user.id, role: "Project Owner")
-    
     @developers = @developers.geocoded # returns developers with coordinates
-    
     @markers = @developers.map do |developer|
-      
       {
         lat: developer.latitude,
         lng: developer.longitude,
@@ -16,12 +13,10 @@ class DevelopersController < ApplicationController
         image_url: helpers.asset_url('rocket.png')
       }
     end
-    
   end
 
-  # def show 
-  #   @developer = Developer.find(params[:id])
-  # end 
+  def show 
+  end 
 
   # def new
   #   @developer = Developer.new
@@ -55,15 +50,15 @@ class DevelopersController < ApplicationController
   #   end
   # end
 
-  # private
+  private
 
-  # def devoloper_params
-  #   params.require(:devoloper).permit(:address, :title, :description)
-  # end
+  def devoloper_params
+    params.require(:devoloper).permit(:address, :title, :description)
+  end
 
-  # def set_devoloper
-  #   @devoloper = Devoloper.find(params[:id])
-  # end
+  def set_devoloper
+    @devoloper = Devoloper.find(params[:id])
+  end
 
 end
 
