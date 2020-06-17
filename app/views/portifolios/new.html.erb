@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Add to your portfolio</h1>
+      <%= simple_form_for [@portifolio ] do |f| %>
+        <%= f.input :link %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, class: 'btn btn-principal w-100' %>
+      <% end %>
+    </div>
+  </div>
+</div>
