@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_170931) do
+ActiveRecord::Schema.define(version: 2020_06_17_134011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,14 @@ ActiveRecord::Schema.define(version: 2020_06_15_170931) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "portifolios", force: :cascade do |t|
+    t.string "link"
+    t.bigint "developer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["developer_id"], name: "index_portifolios_on_developer_id"
+  end
+
   create_table "project_owners", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -113,4 +121,5 @@ ActiveRecord::Schema.define(version: 2020_06_15_170931) do
   add_foreign_key "chatrooms", "projects"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "portifolios", "developers"
 end
