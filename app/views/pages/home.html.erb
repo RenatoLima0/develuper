@@ -16,7 +16,7 @@
 </section>
 <section class="container-fluid section-valores js-scroll">
   <div class="row">
-    <div class="col-6">
+    <div class="col-6 col-md-12">
       <div class="infos">
         <h2 class="mb-5">Easy-to-Access Developers In Your Region</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deserunt libero minima quia aspernatur
@@ -24,34 +24,80 @@
         <a href="btn btn-principal"></a>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-6 col-md-12">
       <img src="https://picsum.photos/id/1/600/500" alt="Develuper" class="img-responsive">
     </div>
   </div>
 </section>
-<section class="container section-depoimentos pt-5 js-scroll">
+
+<section class="container-fluid section-depoimentos pt-5 js-scroll">
   <div class="row justify-content-center">
     <div class="col-7 text-center">
       <h3>Depoimentos</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quos. Et quia error vel, ducimus incidunt ea
-        modi officiis veritatis aut eos.</p>
     </div>
-  </div>
-  <div class="row justify-content-center py-5 js-scroll">
-    <div class="col-3 text-center">
-      <img src="https://picsum.photos/id/237/150/150" alt="" class="avatar">
-    </div>
-    <div class="col-3 text-center">
-      <img src="https://picsum.photos/id/237/150/150" alt="" class="avatar">
-    </div>
-    <div class="col-3 text-center">
-      <img src="https://picsum.photos/id/237/150/150" alt="" class="avatar">
-    </div>
-    <div class="col-3 text-center">
-      <img src="https://picsum.photos/id/237/150/150" alt="" class="avatar">
+    <div class="col-10 px-0 py-4">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators mb-0">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner text-center">
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-5 col-md-12">
+                <img src="https://picsum.photos/id/237/400/400" class="" alt="...">
+              </div>
+              <div class="col-5 col-md-12">
+                <div class="carousel-caption d-none d-md-block py-5">
+                  <h5>First slide label</h5>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-5 col-md-12">
+                <img src="https://picsum.photos/id/237/400/400" class="" alt="...">
+              </div>
+              <div class="col-5 col-md-12">
+                <div class="carousel-caption d-none d-md-block py-5">
+                  <h5>First slide label</h5>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-5 col-md-12">
+                <img src="https://picsum.photos/id/237/400/400" class="" alt="...">
+              </div>
+              <div class="col-5 col-md-12">
+                <div class="carousel-caption d-none d-md-block py-5">
+                  <h5>First slide label</h5>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <%# <span class="carousel-control-prev-icon" aria-hidden="true"></span> %>
+          <i class="fas fa-chevron-left"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <%# <span class="carousel-control-next-icon" aria-hidden="true"></span> %>
+          <i class="fas fa-chevron-right"></i>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
+
 <footer class="container-fluid p-5">
   <div class="row justify-content-center">
     <ul class="navbar nav-footer">
@@ -63,9 +109,15 @@
   <hr>
   <div class="row justify-content-center">
     <ul class="social-network">
-      <li><i class="fab fa-github"></i></li>
-      <li><i class="fab fa-github"></i></li>
-      <li><i class="fab fa-github"></i></li>
+      <li>
+        <a href="https://github.com/RenatoLima0" target="_blank" rel="noopener noreferrer"> <i class="fab fa-github"></i> </a>
+      </li>
+      <li>
+        <a href="https://github.com/AndreAlvesdeAguiar" target="_blank" rel="noopener noreferrer"> <i class="fab fa-github"></i> </a>
+      </li>
+      <li>
+        <a href="https://github.com/mmferreira2000" target="_blank" rel="noopener noreferrer"> <i class="fab fa-github"></i> </a>
+      </li>
     </ul>
   </div>
 </footer>
