@@ -1,6 +1,31 @@
-<% @portifolios.each do |portifolio| %>
-  <%= portifolio %>
-<% end %>
 
 
-teste
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">title</th>
+      <th scope="col">link</th>
+      <th scope="col">photo</th>
+      <th scope="col">edit</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @portifolios.each do |portifolio| %>
+    <tr>
+      <th scope="row">#</th>
+      <td><%= portifolio.title =%></td>
+      <td><%= portifolio.link =%></td>
+      <td><%= portifolio.photo =%></td>
+      <td><%= link_to "Edit Portifólio", "/portifolios/#{portifolio.id}/edit", class: 'btn btn-principal' %></td>
+      <td><%= link_to "Delete Portifólio", portifolio, method: :delete, data: {confirm: "Are you sure?"} , class: 'btn btn-principal' %></td>
+    </tr>
+
+  <% end %>
+  
+  </tbody>
+</table>
+
+ <%= link_to 'New portifolio', new_portifolio_url, class: 'btn-principal btn-projeto' %>

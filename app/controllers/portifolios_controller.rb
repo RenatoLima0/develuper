@@ -15,9 +15,9 @@ class PortifoliosController < ApplicationController
     @portifolio = Portifolio.new(portifolio_params)
     @portifolio.developer = current_user.developer
 
-    # raise
+    
     if @portifolio.save
-      redirect_to @portifolios, notice: 'Portifolio was successfully created.'
+      redirect_to portifolios_path, notice: 'Portifolio was successfully created.'
     else
       render :new
     end
@@ -33,7 +33,7 @@ class PortifoliosController < ApplicationController
 
   def update
     if @portifolio.update(portifolio_params)
-      redirect_to @portifolio, notice: 'Portifolio was successfully updated.'
+      redirect_to portifolios_url, notice: 'Portifolio was successfully updated.'
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class PortifoliosController < ApplicationController
   private
 
   def portifolio_params
-    params.require(:portifolio).permit(:link, :photo)
+    params.require(:portifolio).permit(:link, :photo, :title)
   end
 
   def set_portifolio  
