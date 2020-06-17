@@ -17,7 +17,6 @@ class DevelopersController < ApplicationController
   end
 
   def show 
-    # raise
     @developer = Developer.find(params[:id])
   end 
 

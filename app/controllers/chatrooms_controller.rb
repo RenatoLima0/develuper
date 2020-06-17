@@ -23,7 +23,7 @@ class ChatroomsController < ApplicationController
     end
     
     if @chatroom.nil?
-      # raise
+
       @chatroom = Chatroom.create(developer: @developer, project: @project)
     end
 
