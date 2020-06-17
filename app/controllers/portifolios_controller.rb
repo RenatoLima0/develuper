@@ -7,7 +7,7 @@ class PortifoliosController < ApplicationController
   end
 
   def new
-    @developer = current_user
+    @developer = current_user 
     @portifolio = Portifolio.new
   end
 
@@ -20,6 +20,22 @@ class PortifoliosController < ApplicationController
       redirect_to @portifolios, notice: 'Portifolio was successfully created.'
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def destroy
+    @portifolio.destroy
+    redirect_to portifolios_url, notice: 'Deleted!'
+  end
+
+  def update
+    if @portifolio.update(portifolio_params)
+      redirect_to @portifolio, notice: 'Portifolio was successfully updated.'
+    else
+      render :edit
     end
   end
 

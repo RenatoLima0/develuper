@@ -28,6 +28,9 @@
           <%= link_to 'Edit', "/users/edit", class: 'btn-principal my-4 px-5' %>
         </div>
       </div>
+      <div class="portifolio">
+        <%= link_to "Portifólio", "/portifolios/edit", class: 'btn btn-principal' %>
+      </div>
     </div>
     <div class="col-6">
       <div id="map" style="width: 100%; height: 50vh; border-radius: 10px;" data-markers="<%= @markers.to_json %>"
