@@ -1,8 +1,5 @@
 <div class="container-fluid">
   <div class="row py-3 justify-content-center">
-    <div class="col-12 text-center">
-      <h1>Current user <%= current_user.role %></h1>
-    </div>
     <div class="col-3">
       <div class="card card-user">
         <% if current_user.photo.attached? %>
@@ -24,12 +21,15 @@
             <li class="list-group-item">
               <%= current_user.role %>
             </li>
+            <li class="list-group-item">
+              <%= link_to "Portifólio", " /portifolios", class: 'btn btn-secundario' %>
+            </li>
           </ul>
           <%= link_to 'Edit', "/users/edit", class: 'btn-principal my-4 px-5' %>
         </div>
       </div>
       <div class="portifolio">
-        <%= link_to "Portifólio", " /portifolios", class: 'btn btn-principal' %>
+        
       </div>
     </div>
     <div class="col-6">
