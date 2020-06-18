@@ -1,7 +1,7 @@
 class ChatroomsController < ApplicationController
 
   def index 
-    
+    raise
     @chatrooms = Chatroom.where(project: current_user.project_owner.projects).or(Chatroom.where(developer: current_user.developer))
   end
   
@@ -13,7 +13,7 @@ class ChatroomsController < ApplicationController
   def find_and_redirect
     if params[:project_id] && current_user.developer
       @developer = current_user.developer
-     
+
       @project = Project.find(params[:project_id])
       @chatroom = Chatroom.find_by(developer: @developer, project: @project)
     elsif params[:developer_id] && current_user.project_owner
@@ -27,7 +27,6 @@ class ChatroomsController < ApplicationController
     end
     
     if @chatroom.nil?
-
       @chatroom = Chatroom.create(developer: @developer, project: @project)
     end
 
@@ -40,8 +39,6 @@ class ChatroomsController < ApplicationController
   
   def create
     @chatroom = Chatroom.new(project_params)
-    # project_owner = ProjectOwner.create(user_id: current_user.id)
-    # project_owner = current_user.id
 
     @chatroom.project_owner = project_owner
     if @project.save
