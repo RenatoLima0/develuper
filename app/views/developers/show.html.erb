@@ -2,27 +2,38 @@
   <div class="row">
     <div class="col-6">
       <div id="map" style="width: 100%; height: 50vh; border-radius: 10px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> </div>
+      <% unless current_user.project_owner.nil? %>
+        <%=link_to "MENSAGEM ", find_chatroom_and_redirect_path(developer_id: @developer), class: 'btn btn-secundario w-100 mt-2' %>
+      <% end %>
     </div>
     <div class="col-6">
-      <%= @developer.user.name %>
-      <%= @developer.user.address %>
-      <%= @developer.user.email %>
-      <%= @developer.user.phone %>
-      <% unless current_user.project_owner.nil? %>
-        <%=link_to "MENSAGEM ", find_chatroom_and_redirect_path(developer_id: @developer), class: 'btn btn-success' %>
-      <% end %>
+      <h1> <%= @developer.user.name %> </h1>
+      <h2> <%= @developer.user.address %> </h2>
+      <h3> <%= @developer.user.email %> </h3>
+      <h3> <%= @developer.user.phone %> </h3>
     </div>
   </div>
-
-  <% @developer.portifolios.each do |port| %>
-    <div class="col-4 mt-4">
-      <% if current_user.photo.attached? %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= port.photo.key %>)">
-      <% end %>
-        <%= port.title %>
-  
-      </div>
+  <hr class="my-5">
+  <div class="row mb-5">
+    <div class="col-12 text-center">
+      <h3 class="pb-3">More Projects from this developer</h3>
     </div>
-  <% end %>
+    <% @developer.portifolios.each do |port| %>
+      <div class="col-4">
+        <div class="card-projetos">
+          <% if port.photo.attached? %>
+            <div class="card-body p-0" style="">
+              <%= cl_image_tag port.photo.key, class: "img-fluid", crop: :fill %>
+            </div>
+          <% end %>
+          <div class="card-footer">
+            <a href="<%= port.link %>" target="_blank" rel="noopener noreferrer">
+              <h2 class="text-light"><%= port.title %></h2>
+            </a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
   
 </div>
