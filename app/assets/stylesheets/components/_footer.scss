@@ -61,3 +61,13 @@ footer{
     
   }
 }
+
+@media(max-width: 500px){
+  .nav-footer{
+    flex-direction: column;
+  }
+
+  .social-network {
+    width: 80%;
+  }
+}

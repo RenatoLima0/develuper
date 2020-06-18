@@ -31,7 +31,13 @@ class ProjectsController < ApplicationController
   end
 
   def show 
-    @project = Project.find(params[:id]) 
+    @project = Project.find(params[:id])
+    @markers = []
+    @markers << {
+      lat: @project.latitude,
+      lng: @project.longitude,
+      image_url: helpers.asset_url('idea.png')
+    }
   end 
 
   def new
