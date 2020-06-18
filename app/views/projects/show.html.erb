@@ -5,16 +5,16 @@
       <div id="map" style="width: 100%; height: 50vh; border-radius: 10px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> </div>
       <%=link_to "MENSAGEM ", find_chatroom_and_redirect_path(project_id: @project), class: 'btn btn-secundario w-100 mt-2' %>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6" style="position: relative">
       <h1><%= @project.title %></h1>
       <h2><%= @project.description %></h2>
       <h2><%= @project.address %></h2>
       <% if current_user.id == @project.project_owner.user.id %>
-        <%=link_to "edit project", edit_project_path(@project), class: 'btn btn-primary w-100' %>
-
-        <%=link_to "edit project", edit_project_path(@project), class: 'btn-principal' %>
-        <% @project.project_owner == current_user.id %>
-        <%=link_to "delete project",@product, method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn-secundario' %>
+        <div class="btns" style="position: absolute; bottom: 0; display: flex; justify-content: space-beetwen; text-align: center; width: 100%">
+          <%=link_to "edit project", edit_project_path(@project), class: 'btn-principal w-50' %>
+          <% @project.project_owner == current_user.id %>
+          <%=link_to "delete project",@product, method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn-secundario w-50', style: "background-color: red; border: 2px solid red;" %>
+        </div>
       <% end %>
     </div>
   </div>
