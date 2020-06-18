@@ -1,7 +1,8 @@
 class ChatroomsController < ApplicationController
 
   def index 
-    @chatrooms = Chatroom.where(project_owner: current_user.project_owner).or(Chatroom.where(developer: current_user.developer))
+    
+    @chatrooms = Chatroom.where(project: current_user.project_owner.projects).or(Chatroom.where(developer: current_user.developer))
   end
   
   def show
@@ -10,16 +11,19 @@ class ChatroomsController < ApplicationController
   end
   
   def find_and_redirect
-    if current_user.role == "Developer"
+    if params[:project_id] && current_user.developer
       @developer = current_user.developer
-      # raise
-      @project = current_user.project_owner.projects.first
+     
+      @project = Project.find(params[:project_id])
       @chatroom = Chatroom.find_by(developer: @developer, project: @project)
-    else
+    elsif params[:developer_id] && current_user.project_owner
       @project_owner = current_user.project_owner
       @developer = Developer.find(params[:developer_id])
       @project = current_user.project_owner.projects.first
       @chatroom = Chatroom.find_by(developer: @developer, project: @project)
+    else 
+      redirect_to root_path, alert: "You're not allowed to do that" and return
+
     end
     
     if @chatroom.nil?
