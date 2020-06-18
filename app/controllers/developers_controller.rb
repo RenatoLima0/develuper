@@ -18,6 +18,12 @@ class DevelopersController < ApplicationController
 
   def show 
     @developer = Developer.find(params[:id])
+    @markers = []
+    @markers << {
+      lat: @developer.user.latitude,
+      lng: @developer.user.longitude,
+      image_url: helpers.asset_url('rocket.png')
+    }
   end 
 
   # def new

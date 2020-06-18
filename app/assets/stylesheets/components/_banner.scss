@@ -12,3 +12,11 @@
     font-size: 3rem;
   }
 }
+
+@media(max-width: 500px){
+  .banner {
+    p {
+      font-size: 2rem;
+    }
+  }
+}
