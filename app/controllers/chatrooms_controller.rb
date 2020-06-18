@@ -1,8 +1,12 @@
 class ChatroomsController < ApplicationController
 
   def index 
-    raise
-    @chatrooms = Chatroom.where(project: current_user.project_owner.projects).or(Chatroom.where(developer: current_user.developer))
+    if current_user.project_owner != nil
+      @chatrooms = Chatroom.where(project: current_user.project_owner.projects)
+    else
+      @chatrooms = Chatroom.where(developer: current_user.developer)
+    end
+
   end
   
   def show
