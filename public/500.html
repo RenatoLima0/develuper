@@ -3,43 +3,76 @@
 <head>
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
+    *,
+    html {
+      padding: 0;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+    }
 
+    .rails-default-error-page {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-image: url("mr.jpeg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
 
-.dialog {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-  }
-.rails-default-error-page {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #8854D0;
+    .message {
+      background-color: #ffffff80;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 20px;
+    }
 
-}
+    .message h1 {
+      text-transform: uppercase;
+    }
 
+    .message a {
+      background-color: #8854D0;
+      border: 2px solid #8854D0;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: 600;
+      margin-top: 10px;
+      padding: 8px 25px;
+      text-decoration: none;
+      text-transform: capitalize;
+      transition: .3s;
+    }
 
+    .message a:hover {
+      background-color: #fff;
+      color: #8854D0;
+    }
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div class="row justify-content-center" style="display: flex; justify-content: center;" >
       <div class="col-12">
-
         <div class="dialog">
-     
           <img src="mr.jpeg" alt="Develuper" class="img-fluid">
           <a href= "/" ><button style="background: #069cc2; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">HOME</button></a>
         </div>
       </div>
-
     </div>
+  </div> -->
+    <!-- This file lives in public/404.html -->
+  <div class="message">
+    <h1>Something went wrong </h1>
+    <a href="/">Back to Home</a>
   </div>
 </body>
 </html>

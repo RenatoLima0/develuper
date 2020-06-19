@@ -26,9 +26,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { loadDynamicBannerText } from '../components/banner';
 import { initAnimacaoScroll } from '../components/scroll';
 
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-})
 // External imports
 import "bootstrap";
 
@@ -38,6 +35,7 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initMapbox();
   initChatroomCable();
   loadDynamicBannerText();
   initAnimacaoScroll();

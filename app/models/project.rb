@@ -12,7 +12,7 @@ class Project < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  has_many :chatrooms
+  has_many :chatrooms, dependent: :destroy
   
   belongs_to :project_owner
 

@@ -7,16 +7,22 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-#map{
-  width: 100%;
-  height: calc(100vh - 57px);
-  position: sticky
+.mapa-index{
+  #map{
+    width: 100%;
+    height: calc(100vh - 57px);
+    position: sticky
+  }
+
 }
 
+
 @media(max-width:800px){
-  #map {
-    position: relative;
-    height: 50vh;
+  .mapa-index{
+    #map {
+      position: relative;
+      height: 50vh;
+    }
   }
 }
 
@@ -31,9 +37,11 @@
 }
 
 @media(max-width:500px) {
-  #map {
-    position: relative;
-    height: 50vh;
+  .mapa-index{
+    #map {
+      position: relative;
+      height: 50vh;
+    }
   }
 
   .form-mapa {
