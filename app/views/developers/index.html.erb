@@ -1,10 +1,14 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-5 col-sm-12 p-0 mapa-index">
-			<div id="map" style="height: calc(100vh - 57px);" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-			</div>
+		<div class="col-12 mapa-index">
+			<div id="map" style="height: calc(50vh - 57px); width: 100%" data-markers="<%= @markers.to_json %>" 	data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 		</div>
-		<div class="col-lg-7 col-sm-12 p-0">
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-12 p-0">
 			<h1 class="text-center pt-3">Developers</h1>
 			<div class="row m-0">
 				<% @developers.each do |developer| %>
@@ -20,11 +24,7 @@
 								</div>
 							</div>
 							<div class="card-footer">
-
-
-						
 								<h2><%= link_to developer.user.name, developer_path(developer) %></h2>
-
 							</div>
 						</div>
 					</div>

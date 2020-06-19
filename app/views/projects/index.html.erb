@@ -1,10 +1,14 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-5 col-md-12 p-0 mapa-index">
-      <div id="map" style="height: calc(100vh - 57px);" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="col-12 mapa-index ">
+      <div id="map" style="height: calc(50vh - 57px); width: 100% " data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-    <div class="col-lg-7 col-md-12 p-0">
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 p-0">
       <h1 class="text-center pt-3">Projects</h1>
       <div class="row justify-content-center m-0">
         <div class="col-lg-8 col-md-12 form-mapa my-1">
@@ -34,7 +38,6 @@
           </div>
         <% end %>
       </div>
-
       <%= link_to 'New project', new_project_url, class: 'btn-principal btn-projeto' %>
     </div>
   </div>
