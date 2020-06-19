@@ -8,6 +8,13 @@
     transform: translateY(-5px);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
   }
+  
+  .card-body {
+    flex: 1 1 auto;
+    min-height: 185px;
+    padding: 1.25rem;
+    max-height: 185px;
+  }
 
   .card-footer {
     background-color: $principal;
@@ -22,7 +29,8 @@
 
   h2 {
     margin-bottom: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
 
     a{
       text-decoration: none;

@@ -33,14 +33,12 @@
 }
 
 .btn-projeto{
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+  -webkit-animation: pulse 0.9s infinite;
   animation: pulse 0.9s infinite;
   display: table;
+  -webkit-animation-direction: alternate;
   animation-direction: alternate;
   -webkit-animation-name: pulse;
-  animation-name: pulse;
   text-transform: uppercase;
 }
 
