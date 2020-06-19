@@ -9,7 +9,6 @@ class DashboardsController < ApplicationController
       {
         lat: project.latitude,
         lng: project.longitude,
-        infoWindow: render_to_string(partial: "projects/info_window", locals: { project: project }),
         image_url: helpers.asset_url('idea.png')
       }
     end
@@ -17,7 +16,6 @@ class DashboardsController < ApplicationController
       @markers << {
         lat: developer.latitude,
         lng: developer.longitude,
-        infoWindow: render_to_string(partial: "developers/info_window", locals: { developer: developer }),
         image_url: helpers.asset_url('rocket.png')
       }
     end
