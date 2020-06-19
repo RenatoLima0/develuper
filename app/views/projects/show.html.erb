@@ -3,7 +3,9 @@
   <div class="row">
     <div class="col-lg-6">
       <div id="map" style="width: 100%; height: 50vh; border-radius: 10px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> </div>
-      <%=link_to "MENSAGEM ", find_chatroom_and_redirect_path(project_id: @project), class: 'btn btn-secundario w-100 mt-2' %>
+      <% if current_user.role == "Developer"  %>
+        <%= link_to "MENSAGEM ", find_chatroom_and_redirect_path(project_id: @project), class: 'btn btn-secundario w-100 mt-2' %>
+      <% end %>
     </div>
     <div class="col-lg-6" style="position: relative">
       <h1><%= @project.title %></h1>

@@ -18,6 +18,7 @@ class Project < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
+  validates :address, presence: true
 
   def project_owner_address
     project_owner.user.address 
